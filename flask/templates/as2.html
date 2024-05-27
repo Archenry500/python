@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order form</title>
+    <style>
+        *{
+    box-sizing: border-box;
+}
+
+h1{
+    text-align: center;
+    color: rgb(18, 87, 140);
+}
+
+form{
+   /* background-color: rgb(176, 210, 239);*/
+   background: linear-gradient(rgba(27, 196, 199, 0.45), rgba(5, 51, 235, 0.35));
+    padding: 12px;
+    width: 40em;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+input[type=text], input[type=email], input[type=tel]{
+    margin: 7px 0;
+    width: 100%;
+    padding: 9px 18px;
+    display: inline-block;
+    border: 1px solid rgb(144, 124, 124);
+
+}
+
+input[type=submit], input[type=reset]{
+    display: inline-block;
+    width: 30%;
+    padding: 6px 6px;
+    font-size:18px;
+    border: none;
+    border-radius: 5px;
+    margin: 7px 0;
+    cursor: pointer;
+}
+
+input[type=submit]{
+    background-color: rgb(87, 202, 87);
+    color: white;
+    margin-left: 10px;
+}
+
+input[type=reset]{
+    background-color: rgb(211, 71, 71);
+    color: white;
+}
+
+input:focus:not(input[type=reset], input[type=submit]){
+    border: 2px solid rgb(129, 129, 205);
+    outline: none;
+}
+
+input[type=number]{
+    width: 30%;
+}
+
+input[type=color]{
+    display: block;
+}
+
+input[type=date]{
+    margin-left: 10px;
+    padding: 6px 6px;
+}
+
+textarea{
+    width: 100%;
+    margin-top: 9px;
+    padding: 4px;
+    resize: none;
+}
+    </style>
+</head>
+<body>
+    
+    <form action="send_to.php" method="post">
+        <h1>Elite Furnitures Custormer Order Form</h1><br>
+        <label for="uname">Full Name</label>
+        <input type="text" name="name" id="fullname" placeholder="Your full name"><br><br>
+        <label for="uemail">Email</label>
+        <input type="email" name="email" id="user_email" placeholder="Enter your email" required><br><br>
+        <label for="phoneNumber">phone Number</label>
+        <input type="tel" name="phonenumber" id="phonenumber" placeholder="Enter your phone number" pattern="[0-9]{3}-[0-9]{8}" title="Number pattern:080-44444444"><br><br>
+        <input list="Products" placeholder="Select Product type">
+        <datalist id="Products">
+            <option value="Sofa = N 1000000">
+            <option value="Dinning = N 500000">
+            <option value="Bed = N 700000">
+            <option value="Cabinet = N 250000">
+            <option value="Tables = N 200000">
+            <option value="Wadrobe = N 750000">
+        </datalist><br><br>
+        <label for="Quant">Quantity</label>
+        <input type="number" name="quantity" id="quantity" min="1" max="7"><br><br>
+        <label for="udate">Delivery Date</label>
+        <input type="date" name="delivery_date" id="delivery_date"><br><br>
+        <input type="hidden" name="" value="1234">
+        <input type="color" name="color" id="color" title="Select your product color"><br>
+        <label for="">Delivery address</label>
+        <textarea name="delivery_add" id="delivery_add" rows="3" placeholder="Enter your delivery address"></textarea><br><br>
+        <label for="">Delivery within Abuja</label>
+        <input type="number" name="" id="" value="20000" disabled><br>
+        <br><label for="">Delivery fee inter-state</label>
+        <input type="number" name="" id="" value="150000" disabled><br>
+        <br><label for="">Delivery fee Overseas</label>
+        <input type="number" name="" id="" value="2500000" disabled><br><br>
+
+
+        <input type="reset" value="clear all">
+        <input type="submit" value="send">
+        
+    </form>
+
+
+</body>
+</html>

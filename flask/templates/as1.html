@@ -1,0 +1,49 @@
+
+    {% extends "base.html" %}
+
+    {% block title %}form{% endblock %}
+
+    {% block content %}
+    
+
+    
+    <form action="send_to.php" method="post">
+        <h1>Elite Furnitures Custormer Order Form</h1><br>
+        <label for="uname">Full Name</label>
+        <input type="text" name="name" id="fullname" placeholder="Your full name"><br><br>
+        <label for="uemail">Email</label>
+        <input type="email" name="email" id="user_email" placeholder="Enter your email" required><br><br>
+        <label for="phoneNumber">phone Number</label>
+        <input type="tel" name="phonenumber" id="phonenumber" placeholder="Enter your phone number" pattern="[0-9]{3}-[0-9]{8}" title="Number pattern:080-44444444"><br><br>
+        <input list="Products" placeholder="Select Product type">
+        <datalist id="Products">
+            <option value="Sofa = N 1000000">
+            <option value="Dinning = N 500000">
+            <option value="Bed = N 700000">
+            <option value="Cabinet = N 250000">
+            <option value="Tables = N 200000">
+            <option value="Wadrobe = N 750000">
+        </datalist><br><br>
+        <label for="Quant">Quantity</label>
+        <input type="number" name="quantity" id="quantity" min="1" max="7"><br><br>
+        <label for="udate">Delivery Date</label>
+        <input type="date" name="delivery_date" id="delivery_date"><br><br>
+        <input type="hidden" name="" value="1234">
+        <input type="color" name="color" id="color" title="Select your product color"><br>
+        <label for="">Delivery address</label>
+        <textarea name="delivery_add" id="delivery_add" rows="3" placeholder="Enter your delivery address"></textarea><br><br>
+        <label for="">Delivery within Abuja</label>
+        <input type="number" name="" id="" value="20000" disabled><br>
+        <br><label for="">Delivery fee inter-state</label>
+        <input type="number" name="" id="" value="150000" disabled><br>
+        <br><label for="">Delivery fee Overseas</label>
+        <input type="number" name="" id="" value="2500000" disabled><br><br>
+
+
+        <input type="reset" value="clear all">
+        <input type="submit" value="send">
+        
+    </form>
+
+
+{% endblock %}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <style>
+        *{
+    box-sizing: border-box;
+}
+
+h1{
+    text-align: center;
+    color: rgb(18, 87, 140);
+}
+
+form{
+   /* background-color: rgb(176, 210, 239);*/
+   background: linear-gradient(rgba(27, 196, 199, 0.45), rgba(5, 51, 235, 0.35));
+    padding: 12px;
+    width: 40em;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+input[type=text], input[type=email], input[type=tel]{
+    margin: 7px 0;
+    width: 100%;
+    padding: 9px 18px;
+    display: inline-block;
+    border: 1px solid rgb(144, 124, 124);
+
+}
+
+input[type=submit], input[type=reset]{
+    display: inline-block;
+    width: 30%;
+    padding: 6px 6px;
+    font-size:18px;
+    border: none;
+    border-radius: 5px;
+    margin: 7px 0;
+    cursor: pointer;
+}
+
+input[type=submit]{
+    background-color: rgb(87, 202, 87);
+    color: white;
+    margin-left: 10px;
+}
+
+input[type=reset]{
+    background-color: rgb(211, 71, 71);
+    color: white;
+}
+
+input:focus:not(input[type=reset], input[type=submit]){
+    border: 2px solid rgb(129, 129, 205);
+    outline: none;
+}
+
+input[type=number]{
+    width: 30%;
+}
+
+input[type=color]{
+    display: block;
+}
+
+input[type=date]{
+    margin-left: 10px;
+    padding: 6px 6px;
+}
+
+textarea{
+    width: 100%;
+    margin-top: 9px;
+    padding: 4px;
+    resize: none;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h2>Python programing with Flask</h2>
+
+        <ul>
+            <li><a href="{{ url_for('ass')}}">Form 1</a></li>
+            <li><a href="{{ url_for('ab')}}">Form 2</a></li>
+        </ul>
+    </header>
+    
+
+
+
+    <div>
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
